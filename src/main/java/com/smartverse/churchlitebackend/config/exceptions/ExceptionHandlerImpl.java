@@ -1,7 +1,7 @@
 package com.smartverse.churchlitebackend.config.exceptions;
 
 
-import com.potatotech.authorization.exception.ServiceException;
+import com.smartverse.churchlitebackend.authorization.exception.ServiceException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;

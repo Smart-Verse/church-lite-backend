@@ -4,9 +4,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.smartverse.churchlitebackend.model.memberportal.MemberTransparencyModels.UpdateRequest;
 import com.smartverse.churchlitebackend.model.memberportal.MemberTransparencyModels.VisibilityUpdate;
 import com.smartverse.churchlitebackend.service.memberportal.MemberTransparencyService;
-import com.smartverse.churchlitebackend_gen.dtos.MemberFinancialPortalDTO;
-import com.smartverse.churchlitebackend_gen.dtos.MemberTransparencyConfigurationDTO;
-import com.smartverse.churchlitebackend_gen.endpoints.*;
+import com.smartverse.churchlitebackend.dtos.MemberFinancialPortalDTO;
+import com.smartverse.churchlitebackend.dtos.MemberTransparencyConfigurationDTO;
+import com.smartverse.churchlitebackend.endpoints.*;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 

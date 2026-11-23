@@ -3,8 +3,8 @@ package com.smartverse.churchlitebackend.controller.memberportal;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.smartverse.churchlitebackend.model.memberportal.MemberPortalModels.RegistrationRequest;
 import com.smartverse.churchlitebackend.service.memberportal.MemberPortalAccessService;
-import com.smartverse.churchlitebackend_gen.dtos.MemberRegistrationContextDTO;
-import com.smartverse.churchlitebackend_gen.endpoints.*;
+import com.smartverse.churchlitebackend.dtos.MemberRegistrationContextDTO;
+import com.smartverse.churchlitebackend.endpoints.*;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 

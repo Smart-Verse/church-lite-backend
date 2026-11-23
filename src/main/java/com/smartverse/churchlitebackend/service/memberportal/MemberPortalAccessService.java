@@ -1,7 +1,7 @@
 package com.smartverse.churchlitebackend.service.memberportal;
 
-import com.potatotech.authorization.exception.ServiceException;
-import com.potatotech.authorization.tenant.TenantContext;
+import com.smartverse.churchlitebackend.authorization.exception.ServiceException;
+import com.smartverse.churchlitebackend.authorization.tenant.TenantContext;
 import com.smartverse.churchlitebackend.config.database.TenantSchemaInterceptor;
 import com.smartverse.churchlitebackend.config.migration.DBMigration;
 import com.smartverse.churchlitebackend.config.security.model.AccessProfile;
@@ -14,13 +14,13 @@ import com.smartverse.churchlitebackend.repository.userconfirmation.UserConfirma
 import com.smartverse.churchlitebackend.repository.memberportal.MemberDashboardRepository;
 import com.smartverse.churchlitebackend.service.email.EmailService;
 import com.smartverse.churchlitebackend.messaging.social.MemberProfileEventDispatcher;
-import com.smartverse.churchlitebackend_gen.entities.*;
-import com.smartverse.churchlitebackend_gen.enums.Status;
-import com.smartverse.churchlitebackend_gen.enums.TypePerson;
-import com.smartverse.churchlitebackend_gen.enums.TypePersonChurch;
-import com.smartverse.churchlitebackend_gen.repositories.ChurchConfigurationRepository;
-import com.smartverse.churchlitebackend_gen.repositories.PersonMemberRepository;
-import com.smartverse.churchlitebackend_gen.repositories.PersonRepository;
+import com.smartverse.churchlitebackend.entities.*;
+import com.smartverse.churchlitebackend.enums.Status;
+import com.smartverse.churchlitebackend.enums.TypePerson;
+import com.smartverse.churchlitebackend.enums.TypePersonChurch;
+import com.smartverse.churchlitebackend.repositories.ChurchConfigurationRepository;
+import com.smartverse.churchlitebackend.repositories.PersonMemberRepository;
+import com.smartverse.churchlitebackend.repositories.PersonRepository;
 import jakarta.persistence.EntityManager;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;

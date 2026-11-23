@@ -6,8 +6,8 @@ import com.smartverse.churchlitebackend.model.memberportal.MemberFinancialApprov
 import com.smartverse.churchlitebackend.model.memberportal.MemberFinancialApprovalModels.VoteRequest;
 import com.smartverse.churchlitebackend.repository.memberportal.MemberFinancialApprovalRepository;
 import com.smartverse.churchlitebackend.repository.memberportal.MemberTransparencyRepository;
-import com.smartverse.churchlitebackend_gen.authorization.exception.ServiceException;
-import com.smartverse.churchlitebackend_gen.enums.MemberFinancialStatementStatus;
+import com.smartverse.churchlitebackend.authorization.exception.ServiceException;
+import com.smartverse.churchlitebackend.enums.MemberFinancialStatementStatus;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;

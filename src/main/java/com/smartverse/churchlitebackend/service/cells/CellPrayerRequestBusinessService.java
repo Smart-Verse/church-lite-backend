@@ -1,9 +1,9 @@
 package com.smartverse.churchlitebackend.service.cells;
 
-import com.potatotech.authorization.exception.ServiceException;
-import com.smartverse.churchlitebackend_gen.dtos.CellPrayerRequestDTO;
-import com.smartverse.churchlitebackend_gen.enums.CellPrayerRequestStatus;
-import com.smartverse.churchlitebackend_gen.services.CellPrayerRequestService;
+import com.smartverse.churchlitebackend.authorization.exception.ServiceException;
+import com.smartverse.churchlitebackend.dtos.CellPrayerRequestDTO;
+import com.smartverse.churchlitebackend.enums.CellPrayerRequestStatus;
+import com.smartverse.churchlitebackend.services.CellPrayerRequestService;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

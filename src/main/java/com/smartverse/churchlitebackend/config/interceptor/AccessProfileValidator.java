@@ -1,6 +1,6 @@
 package com.smartverse.churchlitebackend.config.interceptor;
 
-import com.potatotech.authorization.exception.ServiceException;
+import com.smartverse.churchlitebackend.authorization.exception.ServiceException;
 import com.smartverse.churchlitebackend.config.context.ConfigContextImpl;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;

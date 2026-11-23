@@ -5,11 +5,11 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.smartverse.churchlitebackend.model.dashboard.DashboardModels.FinancialFilter;
 import com.smartverse.churchlitebackend.service.dashboard.DashboardService;
 import com.smartverse.churchlitebackend.service.subscription.SubscriptionService;
-import com.smartverse.churchlitebackend_gen.endpoints.GetDashboardAgenda;
-import com.smartverse.churchlitebackend_gen.endpoints.GetDashboardAgendaOutput;
-import com.smartverse.churchlitebackend_gen.endpoints.GetDashboardFinancial;
-import com.smartverse.churchlitebackend_gen.endpoints.GetDashboardFinancialOutput;
-import com.smartverse.churchlitebackend_gen.enums.SubscriptionFeature;
+import com.smartverse.churchlitebackend.endpoints.GetDashboardAgenda;
+import com.smartverse.churchlitebackend.endpoints.GetDashboardAgendaOutput;
+import com.smartverse.churchlitebackend.endpoints.GetDashboardFinancial;
+import com.smartverse.churchlitebackend.endpoints.GetDashboardFinancialOutput;
+import com.smartverse.churchlitebackend.enums.SubscriptionFeature;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 

@@ -1,9 +1,9 @@
 package com.smartverse.churchlitebackend.service.financial;
 
 import com.smartverse.churchlitebackend.service.transactions.TransactionsBusinessService;
-import com.smartverse.churchlitebackend_gen.dtos.FinancialDTO;
-import com.smartverse.churchlitebackend_gen.services.FinancialService;
-import com.potatotech.authorization.exception.ServiceException;
+import com.smartverse.churchlitebackend.dtos.FinancialDTO;
+import com.smartverse.churchlitebackend.services.FinancialService;
+import com.smartverse.churchlitebackend.authorization.exception.ServiceException;
 import jakarta.persistence.EntityManager;
 import org.springframework.stereotype.Service;
 import org.springframework.http.HttpStatus;
@@ -57,7 +57,7 @@ public class FinancialBusinessService extends FinancialService {
 
     private void validatePlanAccountNature(FinancialDTO obj) {
         if (obj.getPlanAccount() == null || obj.getPlanAccount().getId() == null || obj.getTypeFinancial() == null) return;
-        var planAccount = entityManager.find(com.smartverse.churchlitebackend_gen.entities.PlanAccountEntity.class, obj.getPlanAccount().getId());
+        var planAccount = entityManager.find(com.smartverse.churchlitebackend.entities.PlanAccountEntity.class, obj.getPlanAccount().getId());
         if (planAccount == null || !planAccount.getFinancialNature().name().equals(obj.getTypeFinancial().name())) {
             throw new ServiceException(HttpStatus.UNPROCESSABLE_ENTITY, "financial_plan_account_nature_mismatch");
         }

@@ -1,8 +1,8 @@
 package com.smartverse.churchlitebackend.repository.payment;
 
-import com.smartverse.churchlitebackend_gen.entities.BillingDiscountEntity;
-import com.smartverse.churchlitebackend_gen.enums.BillingCycle;
-import com.smartverse.churchlitebackend_gen.repositories.BillingDiscountRepository;
+import com.smartverse.churchlitebackend.entities.BillingDiscountEntity;
+import com.smartverse.churchlitebackend.enums.BillingCycle;
+import com.smartverse.churchlitebackend.repositories.BillingDiscountRepository;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
 

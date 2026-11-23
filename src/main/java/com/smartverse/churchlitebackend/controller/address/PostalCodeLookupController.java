@@ -1,8 +1,8 @@
 package com.smartverse.churchlitebackend.controller.address;
 
 import com.smartverse.churchlitebackend.service.address.PostalCodeLookupService;
-import com.smartverse.churchlitebackend_gen.endpoints.LookupPostalCode;
-import com.smartverse.churchlitebackend_gen.endpoints.LookupPostalCodeOutput;
+import com.smartverse.churchlitebackend.endpoints.LookupPostalCode;
+import com.smartverse.churchlitebackend.endpoints.LookupPostalCodeOutput;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 

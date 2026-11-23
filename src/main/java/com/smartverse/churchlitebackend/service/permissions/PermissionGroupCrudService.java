@@ -1,9 +1,9 @@
 package com.smartverse.churchlitebackend.service.permissions;
 
-import com.smartverse.churchlitebackend_gen.enums.SubscriptionResource;
+import com.smartverse.churchlitebackend.enums.SubscriptionResource;
 import com.smartverse.churchlitebackend.service.subscription.SubscriptionService;
-import com.smartverse.churchlitebackend_gen.dtos.PermissionGroupDTO;
-import com.smartverse.churchlitebackend_gen.services.PermissionGroupService;
+import com.smartverse.churchlitebackend.dtos.PermissionGroupDTO;
+import com.smartverse.churchlitebackend.services.PermissionGroupService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

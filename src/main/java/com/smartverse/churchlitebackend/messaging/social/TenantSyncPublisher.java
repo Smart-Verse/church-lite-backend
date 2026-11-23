@@ -1,9 +1,9 @@
 package com.smartverse.churchlitebackend.messaging.social;
 
-import com.potatotech.authorization.tenant.TenantContext;
+import com.smartverse.churchlitebackend.authorization.tenant.TenantContext;
 import com.smartverse.churchlitebackend.config.security.repository.AuthenticationRepository;
-import com.smartverse.churchlitebackend_gen.dtos.TenantSyncedEventDTO;
-import com.smartverse.churchlitebackend_gen.messaging.pub.TenantSyncedPub;
+import com.smartverse.churchlitebackend.dtos.TenantSyncedEventDTO;
+import com.smartverse.churchlitebackend.messaging.pub.TenantSyncedPub;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.context.event.EventListener;

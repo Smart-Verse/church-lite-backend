@@ -1,8 +1,8 @@
 package com.smartverse.churchlitebackend.repository.cashtransactions;
 
-import com.smartverse.churchlitebackend_gen.entities.CashEntity;
-import com.smartverse.churchlitebackend_gen.entities.CashTransactionsEntity;
-import com.smartverse.churchlitebackend_gen.repositories.CashTransactionsRepository;
+import com.smartverse.churchlitebackend.entities.CashEntity;
+import com.smartverse.churchlitebackend.entities.CashTransactionsEntity;
+import com.smartverse.churchlitebackend.repositories.CashTransactionsRepository;
 import org.springframework.context.annotation.Primary;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.jpa.repository.Lock;

@@ -1,7 +1,7 @@
 package com.smartverse.churchlitebackend.service.costcenter;
 
-import com.smartverse.churchlitebackend_gen.dtos.CostCenterDTO;
-import com.smartverse.churchlitebackend_gen.services.CostCenterService;
+import com.smartverse.churchlitebackend.dtos.CostCenterDTO;
+import com.smartverse.churchlitebackend.services.CostCenterService;
 import jakarta.persistence.EntityManager;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

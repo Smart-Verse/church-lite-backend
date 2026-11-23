@@ -2,8 +2,8 @@ package com.smartverse.churchlitebackend.model.memberportal;
 
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
-import com.smartverse.churchlitebackend_gen.enums.MemberPortalPlanVisibility;
-import com.smartverse.churchlitebackend_gen.enums.MemberPortalTransparencyMode;
+import com.smartverse.churchlitebackend.enums.MemberPortalPlanVisibility;
+import com.smartverse.churchlitebackend.enums.MemberPortalTransparencyMode;
 
 import java.time.LocalDate;
 import java.util.List;

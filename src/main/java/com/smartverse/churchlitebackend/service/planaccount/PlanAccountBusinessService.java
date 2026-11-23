@@ -1,9 +1,9 @@
 package com.smartverse.churchlitebackend.service.planaccount;
 
-import com.potatotech.authorization.exception.ServiceException;
-import com.smartverse.churchlitebackend_gen.dtos.PlanAccountDTO;
-import com.smartverse.churchlitebackend_gen.entities.PlanAccountEntity;
-import com.smartverse.churchlitebackend_gen.services.PlanAccountService;
+import com.smartverse.churchlitebackend.authorization.exception.ServiceException;
+import com.smartverse.churchlitebackend.dtos.PlanAccountDTO;
+import com.smartverse.churchlitebackend.entities.PlanAccountEntity;
+import com.smartverse.churchlitebackend.services.PlanAccountService;
 import jakarta.persistence.EntityManager;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -70,7 +70,7 @@ public class PlanAccountBusinessService extends PlanAccountService {
         }
     }
 
-    private com.smartverse.churchlitebackend_gen.enums.PlanAccountFinancialNature resolveNature(PlanAccountEntity entity) {
+    private com.smartverse.churchlitebackend.enums.PlanAccountFinancialNature resolveNature(PlanAccountEntity entity) {
         if (entity.getParentCode() == null) {
             if (entity.getFinancialNature() == null) throw error("plan_account_financial_nature_required");
             return entity.getFinancialNature();

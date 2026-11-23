@@ -5,9 +5,9 @@ import com.smartverse.churchlitebackend.model.memberportal.MemberDashboardModels
 import com.smartverse.churchlitebackend.repository.memberportal.MemberDashboardRepository;
 import com.smartverse.churchlitebackend.repository.memberportal.MemberContributionRepository;
 import com.smartverse.churchlitebackend.repository.memberportal.MemberEventRepository;
-import com.smartverse.churchlitebackend_gen.authorization.exception.ServiceException;
-import com.smartverse.churchlitebackend_gen.enums.AppointmentStatus;
-import com.smartverse.churchlitebackend_gen.enums.TypeFinancial;
+import com.smartverse.churchlitebackend.authorization.exception.ServiceException;
+import com.smartverse.churchlitebackend.enums.AppointmentStatus;
+import com.smartverse.churchlitebackend.enums.TypeFinancial;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;

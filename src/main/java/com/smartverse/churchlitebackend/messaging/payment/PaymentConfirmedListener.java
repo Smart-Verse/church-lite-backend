@@ -3,8 +3,8 @@ package com.smartverse.churchlitebackend.messaging.payment;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.smartverse.churchlitebackend.service.payment.PaymentConfirmationService;
-import com.smartverse.churchlitebackend_gen.dtos.PaymentConfirmedEventDTO;
-import com.smartverse.churchlitebackend_gen.messaging.sub.PaymentConfirmedSub;
+import com.smartverse.churchlitebackend.dtos.PaymentConfirmedEventDTO;
+import com.smartverse.churchlitebackend.messaging.sub.PaymentConfirmedSub;
 import org.springframework.stereotype.Component;
 
 @Component

@@ -1,7 +1,7 @@
 package com.smartverse.churchlitebackend.model.subscription;
 
-import com.smartverse.churchlitebackend_gen.enums.SubscriptionFeature;
-import com.smartverse.churchlitebackend_gen.enums.SubscriptionResource;
+import com.smartverse.churchlitebackend.enums.SubscriptionFeature;
+import com.smartverse.churchlitebackend.enums.SubscriptionResource;
 
 import java.time.LocalDateTime;
 import java.util.Map;

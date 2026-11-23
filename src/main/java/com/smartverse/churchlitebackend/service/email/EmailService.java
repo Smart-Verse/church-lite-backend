@@ -1,6 +1,6 @@
 package com.smartverse.churchlitebackend.service.email;
 
-import com.potatotech.authorization.exception.ServiceException;
+import com.smartverse.churchlitebackend.authorization.exception.ServiceException;
 import com.smartverse.churchlitebackend.common.FileCommon;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;

@@ -1,9 +1,9 @@
 package com.smartverse.churchlitebackend.messaging.social;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.potatotech.authorization.tenant.TenantContext;
-import com.smartverse.churchlitebackend_gen.dtos.SocialProfileImageUpdatedEventDTO;
-import com.smartverse.churchlitebackend_gen.messaging.sub.SocialProfileImageUpdatedSub;
+import com.smartverse.churchlitebackend.authorization.tenant.TenantContext;
+import com.smartverse.churchlitebackend.dtos.SocialProfileImageUpdatedEventDTO;
+import com.smartverse.churchlitebackend.messaging.sub.SocialProfileImageUpdatedSub;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;

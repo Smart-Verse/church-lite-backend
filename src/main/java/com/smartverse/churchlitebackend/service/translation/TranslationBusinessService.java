@@ -1,11 +1,11 @@
 package com.smartverse.churchlitebackend.service.translation;
 
-import com.smartverse.churchlitebackend_gen.enums.SubscriptionFeature;
+import com.smartverse.churchlitebackend.enums.SubscriptionFeature;
 import com.smartverse.churchlitebackend.service.subscription.SubscriptionService;
-import com.smartverse.churchlitebackend_gen.common.RequestData;
-import com.smartverse.churchlitebackend_gen.common.ResponseData;
-import com.smartverse.churchlitebackend_gen.dtos.TranslationDTO;
-import com.smartverse.churchlitebackend_gen.services.TranslationService;
+import com.smartverse.churchlitebackend.common.RequestData;
+import com.smartverse.churchlitebackend.common.ResponseData;
+import com.smartverse.churchlitebackend.dtos.TranslationDTO;
+import com.smartverse.churchlitebackend.services.TranslationService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

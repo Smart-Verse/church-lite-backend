@@ -1,6 +1,6 @@
 package com.smartverse.churchlitebackend.controller.planaccount;
 
-import com.smartverse.churchlitebackend_gen.controllers.PlanAccountController;
+import com.smartverse.churchlitebackend.controllers.PlanAccountController;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController

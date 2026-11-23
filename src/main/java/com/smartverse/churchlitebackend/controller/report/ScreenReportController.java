@@ -1,12 +1,12 @@
 package com.smartverse.churchlitebackend.controller.report;
 
-import com.potatotech.authorization.exception.ServiceException;
+import com.smartverse.churchlitebackend.authorization.exception.ServiceException;
 import com.smartverse.churchlitebackend.service.report.SmartReportGenerationService;
-import com.smartverse.churchlitebackend_gen.endpoints.GenerateScreenReport;
-import com.smartverse.churchlitebackend_gen.endpoints.GenerateScreenReportInput;
-import com.smartverse.churchlitebackend_gen.endpoints.GenerateScreenReportOutput;
-import com.smartverse.churchlitebackend_gen.endpoints.GetScreenReports;
-import com.smartverse.churchlitebackend_gen.endpoints.GetScreenReportsOutput;
+import com.smartverse.churchlitebackend.endpoints.GenerateScreenReport;
+import com.smartverse.churchlitebackend.endpoints.GenerateScreenReportInput;
+import com.smartverse.churchlitebackend.endpoints.GenerateScreenReportOutput;
+import com.smartverse.churchlitebackend.endpoints.GetScreenReports;
+import com.smartverse.churchlitebackend.endpoints.GetScreenReportsOutput;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.RestController;

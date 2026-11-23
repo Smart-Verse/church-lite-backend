@@ -1,9 +1,9 @@
 package com.smartverse.churchlitebackend.repository.payment;
 
-import com.smartverse.churchlitebackend_gen.entities.SubscriptionPaymentEntity;
-import com.smartverse.churchlitebackend_gen.enums.BillingCycle;
-import com.smartverse.churchlitebackend_gen.enums.PaymentStatus;
-import com.smartverse.churchlitebackend_gen.repositories.SubscriptionPaymentRepository;
+import com.smartverse.churchlitebackend.entities.SubscriptionPaymentEntity;
+import com.smartverse.churchlitebackend.enums.BillingCycle;
+import com.smartverse.churchlitebackend.enums.PaymentStatus;
+import com.smartverse.churchlitebackend.repositories.SubscriptionPaymentRepository;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
 

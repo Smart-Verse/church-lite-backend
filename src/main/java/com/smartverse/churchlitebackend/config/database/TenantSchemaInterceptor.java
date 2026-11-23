@@ -1,7 +1,7 @@
 package com.smartverse.churchlitebackend.config.database;
 
-import com.potatotech.authorization.exception.ServiceException;
-import com.potatotech.authorization.tenant.TenantContext;
+import com.smartverse.churchlitebackend.authorization.exception.ServiceException;
+import com.smartverse.churchlitebackend.authorization.tenant.TenantContext;
 import com.smartverse.churchlitebackend.config.context.ConfigContextImpl;
 import jakarta.persistence.EntityManager;
 import org.hibernate.HibernateException;

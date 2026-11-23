@@ -1,10 +1,10 @@
 package com.smartverse.churchlitebackend.controller.cells;
 
-import com.potatotech.authorization.exception.ServiceException;
-import com.smartverse.churchlitebackend_gen.converters.CellMeetingDTOConverter;
-import com.smartverse.churchlitebackend_gen.endpoints.*;
-import com.smartverse.churchlitebackend_gen.enums.CellMeetingStatus;
-import com.smartverse.churchlitebackend_gen.repositories.CellMeetingRepository;
+import com.smartverse.churchlitebackend.authorization.exception.ServiceException;
+import com.smartverse.churchlitebackend.converters.CellMeetingDTOConverter;
+import com.smartverse.churchlitebackend.endpoints.*;
+import com.smartverse.churchlitebackend.enums.CellMeetingStatus;
+import com.smartverse.churchlitebackend.repositories.CellMeetingRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;

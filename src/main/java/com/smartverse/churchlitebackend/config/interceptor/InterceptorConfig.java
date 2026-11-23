@@ -1,10 +1,10 @@
 package com.smartverse.churchlitebackend.config.interceptor;
 
 
-import com.potatotech.authorization.exception.ServiceException;
-import com.potatotech.authorization.security.Authenticate;
-import com.potatotech.authorization.tenant.TenantConfiguration;
-import com.potatotech.authorization.tenant.TenantContext;
+import com.smartverse.churchlitebackend.authorization.exception.ServiceException;
+import com.smartverse.churchlitebackend.authorization.security.Authenticate;
+import com.smartverse.churchlitebackend.authorization.tenant.TenantConfiguration;
+import com.smartverse.churchlitebackend.authorization.tenant.TenantContext;
 import com.smartverse.churchlitebackend.config.migration.DBMigration;
 import com.smartverse.churchlitebackend.config.context.RequestUserContext;
 import feign.Request;

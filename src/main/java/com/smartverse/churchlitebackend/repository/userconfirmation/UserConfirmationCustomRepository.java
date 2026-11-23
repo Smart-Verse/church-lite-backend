@@ -1,8 +1,8 @@
 package com.smartverse.churchlitebackend.repository.userconfirmation;
 
 
-import com.smartverse.churchlitebackend_gen.entities.UserConfirmationEntity;
-import com.smartverse.churchlitebackend_gen.repositories.UserConfirmationRepository;
+import com.smartverse.churchlitebackend.entities.UserConfirmationEntity;
+import com.smartverse.churchlitebackend.repositories.UserConfirmationRepository;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
 

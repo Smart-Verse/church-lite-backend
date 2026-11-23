@@ -1,8 +1,8 @@
 package com.smartverse.churchlitebackend.config.security.handler;
 
 
-import com.potatotech.authorization.security.Authenticate;
-import com.potatotech.authorization.stereotype.Anonymous;
+import com.smartverse.churchlitebackend.authorization.security.Authenticate;
+import com.smartverse.churchlitebackend.authorization.stereotype.Anonymous;
 import com.smartverse.churchlitebackend.config.security.model.RegisterDTO;
 import com.smartverse.churchlitebackend.config.security.model.UserSupplierDTO;
 import com.smartverse.churchlitebackend.config.security.service.AuthenticationService;

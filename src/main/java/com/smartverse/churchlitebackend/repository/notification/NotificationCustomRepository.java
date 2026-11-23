@@ -1,7 +1,7 @@
 package com.smartverse.churchlitebackend.repository.notification;
 
-import com.smartverse.churchlitebackend_gen.entities.NotificationEntity;
-import com.smartverse.churchlitebackend_gen.repositories.NotificationRepository;
+import com.smartverse.churchlitebackend.entities.NotificationEntity;
+import com.smartverse.churchlitebackend.repositories.NotificationRepository;
 import org.springframework.context.annotation.Primary;
 
 import java.util.List;

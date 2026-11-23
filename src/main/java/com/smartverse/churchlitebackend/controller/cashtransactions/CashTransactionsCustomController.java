@@ -1,10 +1,10 @@
 package com.smartverse.churchlitebackend.controller.cashtransactions;
 
-import com.potatotech.authorization.exception.ServiceException;
+import com.smartverse.churchlitebackend.authorization.exception.ServiceException;
 import com.smartverse.churchlitebackend.repository.cashtransactions.CashTransactionsCustomRepository;
-import com.smartverse.churchlitebackend_gen.converters.CashTransactionsDTOConverter;
-import com.smartverse.churchlitebackend_gen.endpoints.*;
-import com.smartverse.churchlitebackend_gen.repositories.CashRepository;
+import com.smartverse.churchlitebackend.converters.CashTransactionsDTOConverter;
+import com.smartverse.churchlitebackend.endpoints.*;
+import com.smartverse.churchlitebackend.repositories.CashRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

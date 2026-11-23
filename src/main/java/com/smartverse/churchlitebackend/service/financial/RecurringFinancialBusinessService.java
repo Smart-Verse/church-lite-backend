@@ -1,13 +1,13 @@
 package com.smartverse.churchlitebackend.service.financial;
 
-import com.potatotech.authorization.exception.ServiceException;
-import com.smartverse.churchlitebackend_gen.dtos.RecurringFinancialDTO;
-import com.smartverse.churchlitebackend_gen.entities.FinancialEntity;
-import com.smartverse.churchlitebackend_gen.entities.RecurringFinancialEntity;
-import com.smartverse.churchlitebackend_gen.enums.FinancialRecurrenceFrequency;
-import com.smartverse.churchlitebackend_gen.enums.FinancialRecurrenceMode;
-import com.smartverse.churchlitebackend_gen.enums.FinancialRecurrenceStatus;
-import com.smartverse.churchlitebackend_gen.services.RecurringFinancialService;
+import com.smartverse.churchlitebackend.authorization.exception.ServiceException;
+import com.smartverse.churchlitebackend.dtos.RecurringFinancialDTO;
+import com.smartverse.churchlitebackend.entities.FinancialEntity;
+import com.smartverse.churchlitebackend.entities.RecurringFinancialEntity;
+import com.smartverse.churchlitebackend.enums.FinancialRecurrenceFrequency;
+import com.smartverse.churchlitebackend.enums.FinancialRecurrenceMode;
+import com.smartverse.churchlitebackend.enums.FinancialRecurrenceStatus;
+import com.smartverse.churchlitebackend.services.RecurringFinancialService;
 import jakarta.persistence.EntityManager;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -119,7 +119,7 @@ public class RecurringFinancialBusinessService extends RecurringFinancialService
                 || dto.getPlanAccount() == null || dto.getCostCenter() == null) {
             throw error("financial_recurrence_required_fields");
         }
-        var planAccount = entityManager.find(com.smartverse.churchlitebackend_gen.entities.PlanAccountEntity.class, dto.getPlanAccount().getId());
+        var planAccount = entityManager.find(com.smartverse.churchlitebackend.entities.PlanAccountEntity.class, dto.getPlanAccount().getId());
         if (planAccount == null || !planAccount.getFinancialNature().name().equals(dto.getTypeFinancial().name())) {
             throw error("financial_plan_account_nature_mismatch");
         }

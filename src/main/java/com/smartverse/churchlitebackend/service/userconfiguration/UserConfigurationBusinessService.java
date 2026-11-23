@@ -1,6 +1,6 @@
 package com.smartverse.churchlitebackend.service.userconfiguration;
 
-import com.smartverse.churchlitebackend_gen.dtos.UserConfigurationDTO;
+import com.smartverse.churchlitebackend.dtos.UserConfigurationDTO;
 import jakarta.persistence.EntityManager;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -9,7 +9,7 @@ import java.util.UUID;
 
 @Service
 public class UserConfigurationBusinessService
-        extends com.smartverse.churchlitebackend_gen.services.UserConfigurationService {
+        extends com.smartverse.churchlitebackend.services.UserConfigurationService {
 
     private final UserConfigurationService masterUserConfigurationService;
     private final EntityManager entityManager;

@@ -1,10 +1,10 @@
 package com.smartverse.churchlitebackend.service.cash;
 
 import com.smartverse.churchlitebackend.service.subscription.SubscriptionService;
-import com.smartverse.churchlitebackend_gen.dtos.CashDTO;
-import com.smartverse.churchlitebackend_gen.enums.SubscriptionResource;
-import com.smartverse.churchlitebackend_gen.enums.TypeCash;
-import com.smartverse.churchlitebackend_gen.services.CashService;
+import com.smartverse.churchlitebackend.dtos.CashDTO;
+import com.smartverse.churchlitebackend.enums.SubscriptionResource;
+import com.smartverse.churchlitebackend.enums.TypeCash;
+import com.smartverse.churchlitebackend.services.CashService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

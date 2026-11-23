@@ -1,17 +1,17 @@
 package com.smartverse.churchlitebackend.service.report;
 
-import com.potatotech.authorization.exception.ServiceException;
-import com.potatotech.authorization.tenant.TenantContext;
+import com.smartverse.churchlitebackend.authorization.exception.ServiceException;
+import com.smartverse.churchlitebackend.authorization.tenant.TenantContext;
 import com.smartverse.churchlitebackend.client.report.SmartReportClient;
 import com.smartverse.churchlitebackend.config.database.TenantSchemaInterceptor;
 import com.smartverse.churchlitebackend.config.migration.DBMigration;
 import com.smartverse.churchlitebackend.repository.report.IntegrationConfigurationCustomRepository;
 import com.smartverse.churchlitebackend.repository.report.ScreenReportCustomRepository;
-import com.smartverse.churchlitebackend_gen.dtos.ScreenReportOptionDTO;
-import com.smartverse.churchlitebackend_gen.endpoints.GenerateScreenReportOutput;
-import com.smartverse.churchlitebackend_gen.endpoints.GetScreenReportsOutput;
-import com.smartverse.churchlitebackend_gen.entities.ScreenReportEntity;
-import com.smartverse.churchlitebackend_gen.enums.IntegrationService;
+import com.smartverse.churchlitebackend.dtos.ScreenReportOptionDTO;
+import com.smartverse.churchlitebackend.endpoints.GenerateScreenReportOutput;
+import com.smartverse.churchlitebackend.endpoints.GetScreenReportsOutput;
+import com.smartverse.churchlitebackend.entities.ScreenReportEntity;
+import com.smartverse.churchlitebackend.enums.IntegrationService;
 import feign.FeignException;
 import jakarta.persistence.EntityManager;
 import org.slf4j.Logger;

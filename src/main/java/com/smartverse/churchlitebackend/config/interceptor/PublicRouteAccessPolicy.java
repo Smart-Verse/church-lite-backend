@@ -1,6 +1,6 @@
 package com.smartverse.churchlitebackend.config.interceptor;
 
-import com.potatotech.authorization.tenant.TenantContext;
+import com.smartverse.churchlitebackend.authorization.tenant.TenantContext;
 import com.smartverse.churchlitebackend.config.migration.DBMigration;
 import org.springframework.stereotype.Component;
 

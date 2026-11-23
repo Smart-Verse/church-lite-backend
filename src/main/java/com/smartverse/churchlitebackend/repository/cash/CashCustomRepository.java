@@ -1,7 +1,7 @@
 package com.smartverse.churchlitebackend.repository.cash;
 
-import com.smartverse.churchlitebackend_gen.entities.CashEntity;
-import com.smartverse.churchlitebackend_gen.repositories.CashRepository;
+import com.smartverse.churchlitebackend.entities.CashEntity;
+import com.smartverse.churchlitebackend.repositories.CashRepository;
 import jakarta.persistence.LockModeType;
 import org.springframework.context.annotation.Primary;
 import org.springframework.data.jpa.repository.Lock;

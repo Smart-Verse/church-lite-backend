@@ -1,19 +1,19 @@
 package com.smartverse.churchlitebackend.service.payment;
 
-import com.potatotech.authorization.exception.ServiceException;
-import com.potatotech.authorization.tenant.TenantContext;
+import com.smartverse.churchlitebackend.authorization.exception.ServiceException;
+import com.smartverse.churchlitebackend.authorization.tenant.TenantContext;
 import com.smartverse.churchlitebackend.config.database.TenantSchemaInterceptor;
 import com.smartverse.churchlitebackend.config.migration.DBMigration;
 import com.smartverse.churchlitebackend.repository.payment.PaymentEventInboxCustomRepository;
 import com.smartverse.churchlitebackend.repository.payment.SubscriptionPaymentCustomRepository;
 import com.smartverse.churchlitebackend.service.subscription.SubscriptionCache;
-import com.smartverse.churchlitebackend_gen.dtos.PaymentConfirmedEventDTO;
-import com.smartverse.churchlitebackend_gen.entities.PaymentEventInboxEntity;
-import com.smartverse.churchlitebackend_gen.entities.SubscriptionPaymentEntity;
-import com.smartverse.churchlitebackend_gen.entities.TenantSubscriptionEntity;
-import com.smartverse.churchlitebackend_gen.enums.PaymentStatus;
-import com.smartverse.churchlitebackend_gen.repositories.SubscriptionPlanRepository;
-import com.smartverse.churchlitebackend_gen.repositories.TenantSubscriptionRepository;
+import com.smartverse.churchlitebackend.dtos.PaymentConfirmedEventDTO;
+import com.smartverse.churchlitebackend.entities.PaymentEventInboxEntity;
+import com.smartverse.churchlitebackend.entities.SubscriptionPaymentEntity;
+import com.smartverse.churchlitebackend.entities.TenantSubscriptionEntity;
+import com.smartverse.churchlitebackend.enums.PaymentStatus;
+import com.smartverse.churchlitebackend.repositories.SubscriptionPlanRepository;
+import com.smartverse.churchlitebackend.repositories.TenantSubscriptionRepository;
 import jakarta.persistence.EntityManager;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
@@ -196,7 +196,7 @@ public class PaymentConfirmationService {
         }
     }
 
-    private com.smartverse.churchlitebackend_gen.entities.SubscriptionPlanEntity findActivePlan(
+    private com.smartverse.churchlitebackend.entities.SubscriptionPlanEntity findActivePlan(
             String planCode) {
         return planRepository.findAll().stream()
                 .filter(item -> planCode.equalsIgnoreCase(item.getCode()) && item.isActive())
@@ -218,7 +218,7 @@ public class PaymentConfirmationService {
 
     private void applySubscription(
             TenantSubscriptionEntity subscription,
-            com.smartverse.churchlitebackend_gen.entities.SubscriptionPlanEntity plan,
+            com.smartverse.churchlitebackend.entities.SubscriptionPlanEntity plan,
             LocalDateTime paidAt,
             LocalDateTime coverageEnd) {
         subscription.setPlan(plan);

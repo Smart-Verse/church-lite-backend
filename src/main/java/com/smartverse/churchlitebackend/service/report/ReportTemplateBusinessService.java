@@ -1,11 +1,11 @@
 package com.smartverse.churchlitebackend.service.report;
 
-import com.smartverse.churchlitebackend_gen.enums.SubscriptionFeature;
+import com.smartverse.churchlitebackend.enums.SubscriptionFeature;
 import com.smartverse.churchlitebackend.service.subscription.SubscriptionService;
-import com.smartverse.churchlitebackend_gen.common.RequestData;
-import com.smartverse.churchlitebackend_gen.common.ResponseData;
-import com.smartverse.churchlitebackend_gen.dtos.ReportTemplateDTO;
-import com.smartverse.churchlitebackend_gen.services.ReportTemplateService;
+import com.smartverse.churchlitebackend.common.RequestData;
+import com.smartverse.churchlitebackend.common.ResponseData;
+import com.smartverse.churchlitebackend.dtos.ReportTemplateDTO;
+import com.smartverse.churchlitebackend.services.ReportTemplateService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

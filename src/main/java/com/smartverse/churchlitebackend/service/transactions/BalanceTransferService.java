@@ -1,14 +1,14 @@
 package com.smartverse.churchlitebackend.service.transactions;
 
-import com.potatotech.authorization.exception.ServiceException;
+import com.smartverse.churchlitebackend.authorization.exception.ServiceException;
 import com.smartverse.churchlitebackend.repository.cash.CashCustomRepository;
 import com.smartverse.churchlitebackend.repository.cashtransactions.CashTransactionsCustomRepository;
 import com.smartverse.churchlitebackend.repository.transactions.TransactionsCustomRepository;
-import com.smartverse.churchlitebackend_gen.entities.CashEntity;
-import com.smartverse.churchlitebackend_gen.entities.CashTransactionsEntity;
-import com.smartverse.churchlitebackend_gen.entities.TransactionsEntity;
-import com.smartverse.churchlitebackend_gen.enums.TransactionOperation;
-import com.smartverse.churchlitebackend_gen.enums.TypeCash;
+import com.smartverse.churchlitebackend.entities.CashEntity;
+import com.smartverse.churchlitebackend.entities.CashTransactionsEntity;
+import com.smartverse.churchlitebackend.entities.TransactionsEntity;
+import com.smartverse.churchlitebackend.enums.TransactionOperation;
+import com.smartverse.churchlitebackend.enums.TypeCash;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

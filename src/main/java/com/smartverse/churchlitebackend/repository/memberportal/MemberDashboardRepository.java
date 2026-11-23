@@ -1,6 +1,6 @@
 package com.smartverse.churchlitebackend.repository.memberportal;
 
-import com.smartverse.churchlitebackend_gen.entities.PersonMemberEntity;
+import com.smartverse.churchlitebackend.entities.PersonMemberEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

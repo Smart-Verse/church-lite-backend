@@ -1,16 +1,16 @@
 package com.smartverse.churchlitebackend.service.notification;
 
-import com.potatotech.authorization.exception.ServiceException;
+import com.smartverse.churchlitebackend.authorization.exception.ServiceException;
 import com.smartverse.churchlitebackend.config.context.RequestUserContext;
 import com.smartverse.churchlitebackend.repository.notification.NotificationCustomRepository;
-import com.smartverse.churchlitebackend_gen.converters.NotificationDTOConverter;
-import com.smartverse.churchlitebackend_gen.dtos.NotificationDTO;
-import com.smartverse.churchlitebackend_gen.entities.NotificationEntity;
-import com.smartverse.churchlitebackend_gen.entities.UserConfigurationEntity;
-import com.smartverse.churchlitebackend_gen.enums.AppointmentStatus;
-import com.smartverse.churchlitebackend_gen.enums.NotificationType;
-import com.smartverse.churchlitebackend_gen.repositories.AppointmentsRepository;
-import com.smartverse.churchlitebackend_gen.repositories.UserConfigurationRepository;
+import com.smartverse.churchlitebackend.converters.NotificationDTOConverter;
+import com.smartverse.churchlitebackend.dtos.NotificationDTO;
+import com.smartverse.churchlitebackend.entities.NotificationEntity;
+import com.smartverse.churchlitebackend.entities.UserConfigurationEntity;
+import com.smartverse.churchlitebackend.enums.AppointmentStatus;
+import com.smartverse.churchlitebackend.enums.NotificationType;
+import com.smartverse.churchlitebackend.repositories.AppointmentsRepository;
+import com.smartverse.churchlitebackend.repositories.UserConfigurationRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.slf4j.Logger;

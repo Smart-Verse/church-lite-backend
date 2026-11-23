@@ -2,9 +2,9 @@ package com.smartverse.churchlitebackend.controller.memberportal;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.smartverse.churchlitebackend.service.memberportal.MemberDashboardService;
-import com.smartverse.churchlitebackend_gen.dtos.MemberDashboardDTO;
-import com.smartverse.churchlitebackend_gen.endpoints.GetMemberDashboard;
-import com.smartverse.churchlitebackend_gen.endpoints.GetMemberDashboardOutput;
+import com.smartverse.churchlitebackend.dtos.MemberDashboardDTO;
+import com.smartverse.churchlitebackend.endpoints.GetMemberDashboard;
+import com.smartverse.churchlitebackend.endpoints.GetMemberDashboardOutput;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 

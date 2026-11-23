@@ -1,7 +1,7 @@
 package com.smartverse.churchlitebackend.config.messaging;
 
-import com.smartverse.churchlitebackend_gen.messaging.RabbitConfig;
-import com.smartverse.churchlitebackend_gen.messaging.RabbitExchange;
+import com.smartverse.churchlitebackend.messaging.RabbitConfig;
+import com.smartverse.churchlitebackend.messaging.RabbitExchange;
 import org.springframework.amqp.core.Binding;
 import org.springframework.amqp.core.BindingBuilder;
 import org.springframework.amqp.core.Message;

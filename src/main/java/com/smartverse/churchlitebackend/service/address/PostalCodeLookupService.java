@@ -1,10 +1,10 @@
 package com.smartverse.churchlitebackend.service.address;
 
-import com.potatotech.authorization.exception.ServiceException;
+import com.smartverse.churchlitebackend.authorization.exception.ServiceException;
 import com.smartverse.churchlitebackend.client.address.ViaCepClient;
-import com.smartverse.churchlitebackend_gen.converters.CityDTOConverter;
-import com.smartverse.churchlitebackend_gen.endpoints.LookupPostalCodeOutput;
-import com.smartverse.churchlitebackend_gen.entities.CityEntity;
+import com.smartverse.churchlitebackend.converters.CityDTOConverter;
+import com.smartverse.churchlitebackend.endpoints.LookupPostalCodeOutput;
+import com.smartverse.churchlitebackend.entities.CityEntity;
 import feign.FeignException;
 import jakarta.persistence.EntityManager;
 import org.springframework.http.HttpStatus;

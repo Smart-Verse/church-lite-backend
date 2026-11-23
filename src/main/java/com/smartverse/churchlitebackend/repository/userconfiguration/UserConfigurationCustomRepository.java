@@ -1,7 +1,7 @@
 package com.smartverse.churchlitebackend.repository.userconfiguration;
 
-import com.smartverse.churchlitebackend_gen.entities.UserConfigurationEntity;
-import com.smartverse.churchlitebackend_gen.repositories.UserConfigurationRepository;
+import com.smartverse.churchlitebackend.entities.UserConfigurationEntity;
+import com.smartverse.churchlitebackend.repositories.UserConfigurationRepository;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
 

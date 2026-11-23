@@ -1,11 +1,11 @@
 package com.smartverse.churchlitebackend.service.cells;
 
-import com.potatotech.authorization.exception.ServiceException;
-import com.smartverse.churchlitebackend_gen.enums.SubscriptionResource;
+import com.smartverse.churchlitebackend.authorization.exception.ServiceException;
+import com.smartverse.churchlitebackend.enums.SubscriptionResource;
 import com.smartverse.churchlitebackend.service.subscription.SubscriptionService;
-import com.smartverse.churchlitebackend_gen.dtos.CellDTO;
-import com.smartverse.churchlitebackend_gen.enums.CellStatus;
-import com.smartverse.churchlitebackend_gen.services.CellService;
+import com.smartverse.churchlitebackend.dtos.CellDTO;
+import com.smartverse.churchlitebackend.enums.CellStatus;
+import com.smartverse.churchlitebackend.services.CellService;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

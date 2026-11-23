@@ -1,9 +1,9 @@
 package com.smartverse.churchlitebackend.config.security.service;
 
-import com.potatotech.authorization.exception.ServiceException;
-import com.potatotech.authorization.security.Authenticate;
-import com.potatotech.authorization.security.UserSupplier;
-import com.potatotech.authorization.tenant.TenantContext;
+import com.smartverse.churchlitebackend.authorization.exception.ServiceException;
+import com.smartverse.churchlitebackend.authorization.security.Authenticate;
+import com.smartverse.churchlitebackend.authorization.security.UserSupplier;
+import com.smartverse.churchlitebackend.authorization.tenant.TenantContext;
 import com.smartverse.churchlitebackend.config.security.model.RegisterDTO;
 import com.smartverse.churchlitebackend.config.security.model.UserSupplierDTO;
 import com.smartverse.churchlitebackend.config.security.model.UserSupplierEntity;
@@ -11,7 +11,7 @@ import com.smartverse.churchlitebackend.config.security.model.AccessProfile;
 import com.smartverse.churchlitebackend.config.security.repository.AuthenticationRepository;
 import com.smartverse.churchlitebackend.repository.userconfirmation.UserConfirmationCustomRepository;
 import com.smartverse.churchlitebackend.service.email.EmailService;
-import com.smartverse.churchlitebackend_gen.entities.UserConfirmationEntity;
+import com.smartverse.churchlitebackend.entities.UserConfirmationEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
@@ -92,7 +92,7 @@ public class AuthenticationService {
         usersup.setName(userSupplier.getName());
         usersup.setTenant(userSupplier.getTenant());
         usersup.setEmail(userSupplier.getEmail());
-        usersup.setGroupRoles(Collections.emptyList());
+        usersup.setRoles(Collections.emptyList());
         return usersup;
     }
 

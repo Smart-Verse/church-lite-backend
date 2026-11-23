@@ -1,7 +1,7 @@
 package com.smartverse.churchlitebackend.repository.payment;
 
-import com.smartverse.churchlitebackend_gen.entities.PaymentEventInboxEntity;
-import com.smartverse.churchlitebackend_gen.repositories.PaymentEventInboxRepository;
+import com.smartverse.churchlitebackend.entities.PaymentEventInboxEntity;
+import com.smartverse.churchlitebackend.repositories.PaymentEventInboxRepository;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
 

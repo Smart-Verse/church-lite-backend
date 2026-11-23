@@ -1,7 +1,7 @@
 package com.smartverse.churchlitebackend.repository.memberportal;
 
-import com.smartverse.churchlitebackend_gen.entities.FinancialEntity;
-import com.smartverse.churchlitebackend_gen.enums.TypeFinancial;
+import com.smartverse.churchlitebackend.entities.FinancialEntity;
+import com.smartverse.churchlitebackend.enums.TypeFinancial;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.EntityGraph;
 import org.springframework.data.jpa.repository.JpaRepository;

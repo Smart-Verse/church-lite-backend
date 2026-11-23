@@ -1,8 +1,8 @@
 package com.smartverse.churchlitebackend.service.cells;
 
-import com.potatotech.authorization.exception.ServiceException;
-import com.smartverse.churchlitebackend_gen.dtos.CellAttendanceDTO;
-import com.smartverse.churchlitebackend_gen.services.CellAttendanceService;
+import com.smartverse.churchlitebackend.authorization.exception.ServiceException;
+import com.smartverse.churchlitebackend.dtos.CellAttendanceDTO;
+import com.smartverse.churchlitebackend.services.CellAttendanceService;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

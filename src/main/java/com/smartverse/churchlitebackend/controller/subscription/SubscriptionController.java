@@ -2,8 +2,8 @@ package com.smartverse.churchlitebackend.controller.subscription;
 
 import com.smartverse.churchlitebackend.service.storage.MiniIoService;
 import com.smartverse.churchlitebackend.service.subscription.SubscriptionService;
-import com.smartverse.churchlitebackend_gen.endpoints.GetCurrentSubscription;
-import com.smartverse.churchlitebackend_gen.endpoints.GetCurrentSubscriptionOutput;
+import com.smartverse.churchlitebackend.endpoints.GetCurrentSubscription;
+import com.smartverse.churchlitebackend.endpoints.GetCurrentSubscriptionOutput;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;

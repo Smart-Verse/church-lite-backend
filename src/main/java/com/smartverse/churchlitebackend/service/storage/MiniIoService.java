@@ -1,9 +1,9 @@
 package com.smartverse.churchlitebackend.service.storage;
 
 
-import com.potatotech.authorization.exception.ServiceException;
-import com.potatotech.authorization.tenant.TenantContext;
-import com.smartverse.churchlitebackend_gen.enums.SubscriptionResource;
+import com.smartverse.churchlitebackend.authorization.exception.ServiceException;
+import com.smartverse.churchlitebackend.authorization.tenant.TenantContext;
+import com.smartverse.churchlitebackend.enums.SubscriptionResource;
 import com.smartverse.churchlitebackend.service.subscription.SubscriptionService;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -33,7 +33,7 @@ public class MiniIoService {
     public MiniIoService(SubscriptionService subscriptionService) {
         this.subscriptionService = subscriptionService;
 
-        AwsBasicCredentials awsCredentials = AwsBasicCredentials.create("admin", "admin123");
+        AwsBasicCredentials awsCredentials = AwsBasicCredentials.create("admin", "553322@@##Gh");
 
 
 

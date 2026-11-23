@@ -1,6 +1,6 @@
 package com.smartverse.churchlitebackend.config.interceptor;
 
-import com.potatotech.authorization.exception.ServiceException;
+import com.smartverse.churchlitebackend.authorization.exception.ServiceException;
 import com.smartverse.churchlitebackend.config.metadata.PermissionCatalogService;
 import com.smartverse.churchlitebackend.service.permissions.PermissionGroupBusinessService;
 import jakarta.servlet.http.HttpServletRequest;

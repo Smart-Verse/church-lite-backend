@@ -1,8 +1,8 @@
 package com.smartverse.churchlitebackend.repository.memberportal;
 
 import com.smartverse.churchlitebackend.model.memberportal.MemberTransparencyModels.PlanAccountVisibility;
-import com.smartverse.churchlitebackend_gen.enums.MemberPortalPlanVisibility;
-import com.smartverse.churchlitebackend_gen.enums.MemberPortalTransparencyMode;
+import com.smartverse.churchlitebackend.enums.MemberPortalPlanVisibility;
+import com.smartverse.churchlitebackend.enums.MemberPortalTransparencyMode;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 

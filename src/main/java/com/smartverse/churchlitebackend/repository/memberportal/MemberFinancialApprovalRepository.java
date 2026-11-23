@@ -1,8 +1,8 @@
 package com.smartverse.churchlitebackend.repository.memberportal;
 
 import com.smartverse.churchlitebackend.model.memberportal.MemberFinancialApprovalModels.CashClosing;
-import com.smartverse.churchlitebackend_gen.authorization.exception.ServiceException;
-import com.smartverse.churchlitebackend_gen.enums.MemberFinancialStatementStatus;
+import com.smartverse.churchlitebackend.authorization.exception.ServiceException;
+import com.smartverse.churchlitebackend.enums.MemberFinancialStatementStatus;
 import org.springframework.http.HttpStatus;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;

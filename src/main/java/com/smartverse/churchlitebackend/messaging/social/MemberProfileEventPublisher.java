@@ -1,6 +1,6 @@
 package com.smartverse.churchlitebackend.messaging.social;
 
-import com.smartverse.churchlitebackend_gen.messaging.pub.MemberProfileSyncedPub;
+import com.smartverse.churchlitebackend.messaging.pub.MemberProfileSyncedPub;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.event.TransactionPhase;
 import org.springframework.transaction.event.TransactionalEventListener;

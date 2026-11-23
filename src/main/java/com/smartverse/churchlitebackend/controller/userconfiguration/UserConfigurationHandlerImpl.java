@@ -1,6 +1,6 @@
 package com.smartverse.churchlitebackend.controller.userconfiguration;
 
-import com.smartverse.churchlitebackend_gen.controllers.UserConfigurationController;
+import com.smartverse.churchlitebackend.controllers.UserConfigurationController;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController

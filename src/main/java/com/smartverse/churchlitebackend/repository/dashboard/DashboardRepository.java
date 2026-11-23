@@ -1,7 +1,7 @@
 package com.smartverse.churchlitebackend.repository.dashboard;
 
-import com.smartverse.churchlitebackend_gen.entities.*;
-import com.smartverse.churchlitebackend_gen.repositories.*;
+import com.smartverse.churchlitebackend.entities.*;
+import com.smartverse.churchlitebackend.repositories.*;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

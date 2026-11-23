@@ -1,7 +1,7 @@
 package com.smartverse.churchlitebackend.repository.memberportal;
 
-import com.smartverse.churchlitebackend_gen.entities.AppointmentsEntity;
-import com.smartverse.churchlitebackend_gen.enums.AppointmentStatus;
+import com.smartverse.churchlitebackend.entities.AppointmentsEntity;
+import com.smartverse.churchlitebackend.enums.AppointmentStatus;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.EntityGraph;
 import org.springframework.data.jpa.repository.JpaRepository;

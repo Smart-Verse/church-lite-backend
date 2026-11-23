@@ -1,8 +1,8 @@
 package com.smartverse.churchlitebackend.messaging.social;
 
 import com.smartverse.churchlitebackend.config.security.model.UserSupplierEntity;
-import com.smartverse.churchlitebackend_gen.dtos.MemberProfileSyncedEventDTO;
-import com.smartverse.churchlitebackend_gen.entities.PersonMemberEntity;
+import com.smartverse.churchlitebackend.dtos.MemberProfileSyncedEventDTO;
+import com.smartverse.churchlitebackend.entities.PersonMemberEntity;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Component;
 

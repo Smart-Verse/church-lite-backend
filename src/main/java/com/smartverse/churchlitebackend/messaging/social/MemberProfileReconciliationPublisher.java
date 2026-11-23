@@ -1,14 +1,14 @@
 package com.smartverse.churchlitebackend.messaging.social;
 
-import com.potatotech.authorization.tenant.TenantContext;
+import com.smartverse.churchlitebackend.authorization.tenant.TenantContext;
 import com.smartverse.churchlitebackend.config.migration.DBMigration;
 import com.smartverse.churchlitebackend.config.security.model.AccessProfile;
 import com.smartverse.churchlitebackend.config.security.model.UserSupplierEntity;
 import com.smartverse.churchlitebackend.config.security.repository.AuthenticationRepository;
-import com.smartverse.churchlitebackend_gen.dtos.MemberProfileSyncedEventDTO;
-import com.smartverse.churchlitebackend_gen.entities.PersonMemberEntity;
-import com.smartverse.churchlitebackend_gen.messaging.pub.MemberProfileSyncedPub;
-import com.smartverse.churchlitebackend_gen.repositories.PersonMemberRepository;
+import com.smartverse.churchlitebackend.dtos.MemberProfileSyncedEventDTO;
+import com.smartverse.churchlitebackend.entities.PersonMemberEntity;
+import com.smartverse.churchlitebackend.messaging.pub.MemberProfileSyncedPub;
+import com.smartverse.churchlitebackend.repositories.PersonMemberRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.context.event.ApplicationReadyEvent;

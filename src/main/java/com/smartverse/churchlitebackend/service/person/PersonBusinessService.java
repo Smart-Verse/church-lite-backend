@@ -1,9 +1,9 @@
 package com.smartverse.churchlitebackend.service.person;
 
-import com.smartverse.churchlitebackend_gen.enums.SubscriptionResource;
+import com.smartverse.churchlitebackend.enums.SubscriptionResource;
 import com.smartverse.churchlitebackend.service.subscription.SubscriptionService;
-import com.smartverse.churchlitebackend_gen.dtos.PersonDTO;
-import com.smartverse.churchlitebackend_gen.services.PersonService;
+import com.smartverse.churchlitebackend.dtos.PersonDTO;
+import com.smartverse.churchlitebackend.services.PersonService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

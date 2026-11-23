@@ -2,11 +2,11 @@ package com.smartverse.churchlitebackend.messaging.social;
 
 import com.smartverse.churchlitebackend.config.migration.DBMigration;
 import com.smartverse.churchlitebackend.service.notification.NotificationBusinessService;
-import com.smartverse.churchlitebackend_gen.dtos.SocialProfileImageUpdatedEventDTO;
-import com.smartverse.churchlitebackend_gen.enums.NotificationType;
-import com.smartverse.churchlitebackend_gen.repositories.PersonMemberRepository;
-import com.smartverse.churchlitebackend_gen.repositories.PersonRepository;
-import com.smartverse.churchlitebackend_gen.repositories.UserConfigurationRepository;
+import com.smartverse.churchlitebackend.dtos.SocialProfileImageUpdatedEventDTO;
+import com.smartverse.churchlitebackend.enums.NotificationType;
+import com.smartverse.churchlitebackend.repositories.PersonMemberRepository;
+import com.smartverse.churchlitebackend.repositories.PersonRepository;
+import com.smartverse.churchlitebackend.repositories.UserConfigurationRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;

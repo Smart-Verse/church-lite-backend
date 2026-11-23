@@ -1,7 +1,7 @@
 package com.smartverse.churchlitebackend.controller.notification;
 
 import com.smartverse.churchlitebackend.service.notification.NotificationBusinessService;
-import com.smartverse.churchlitebackend_gen.endpoints.*;
+import com.smartverse.churchlitebackend.endpoints.*;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 

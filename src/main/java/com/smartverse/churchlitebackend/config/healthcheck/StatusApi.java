@@ -1,7 +1,7 @@
 package com.smartverse.churchlitebackend.config.healthcheck;
 
 
-import com.potatotech.authorization.stereotype.Anonymous;
+import com.smartverse.churchlitebackend.authorization.stereotype.Anonymous;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

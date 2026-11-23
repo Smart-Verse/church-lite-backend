@@ -1,11 +1,11 @@
 package com.smartverse.churchlitebackend.controller.payment;
 
 import com.smartverse.churchlitebackend.service.payment.PaymentCheckoutService;
-import com.smartverse.churchlitebackend_gen.endpoints.CreatePaymentLink;
-import com.smartverse.churchlitebackend_gen.endpoints.CreatePaymentLinkInput;
-import com.smartverse.churchlitebackend_gen.endpoints.CreatePaymentLinkOutput;
-import com.smartverse.churchlitebackend_gen.endpoints.GetPaymentHistory;
-import com.smartverse.churchlitebackend_gen.endpoints.GetPaymentHistoryOutput;
+import com.smartverse.churchlitebackend.endpoints.CreatePaymentLink;
+import com.smartverse.churchlitebackend.endpoints.CreatePaymentLinkInput;
+import com.smartverse.churchlitebackend.endpoints.CreatePaymentLinkOutput;
+import com.smartverse.churchlitebackend.endpoints.GetPaymentHistory;
+import com.smartverse.churchlitebackend.endpoints.GetPaymentHistoryOutput;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;

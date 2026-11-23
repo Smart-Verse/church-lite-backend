@@ -1,10 +1,10 @@
 package com.smartverse.churchlitebackend.service.appointments;
 
-import com.potatotech.authorization.exception.ServiceException;
-import com.smartverse.churchlitebackend_gen.converters.AppointmentsDTOConverter;
-import com.smartverse.churchlitebackend_gen.dtos.AppointmentsDTO;
-import com.smartverse.churchlitebackend_gen.enums.AppointmentStatus;
-import com.smartverse.churchlitebackend_gen.enums.RecurrenceType;
+import com.smartverse.churchlitebackend.authorization.exception.ServiceException;
+import com.smartverse.churchlitebackend.converters.AppointmentsDTOConverter;
+import com.smartverse.churchlitebackend.dtos.AppointmentsDTO;
+import com.smartverse.churchlitebackend.enums.AppointmentStatus;
+import com.smartverse.churchlitebackend.enums.RecurrenceType;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import org.springframework.http.HttpStatus;

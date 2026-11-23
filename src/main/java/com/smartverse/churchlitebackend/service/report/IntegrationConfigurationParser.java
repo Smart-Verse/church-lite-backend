@@ -1,6 +1,6 @@
 package com.smartverse.churchlitebackend.service.report;
 
-import com.potatotech.authorization.exception.ServiceException;
+import com.smartverse.churchlitebackend.authorization.exception.ServiceException;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 

@@ -1,8 +1,8 @@
 package com.smartverse.churchlitebackend.controller.permissions;
 
 import com.smartverse.churchlitebackend.config.metadata.PermissionCatalogService;
-import com.smartverse.churchlitebackend_gen.endpoints.GetPermissionResources;
-import com.smartverse.churchlitebackend_gen.endpoints.GetPermissionResourcesOutput;
+import com.smartverse.churchlitebackend.endpoints.GetPermissionResources;
+import com.smartverse.churchlitebackend.endpoints.GetPermissionResourcesOutput;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 

@@ -2,8 +2,8 @@ package com.smartverse.churchlitebackend.controller.userconfiguration;
 
 import com.smartverse.churchlitebackend.repository.userconfiguration.UserConfigurationCustomRepository;
 import com.smartverse.churchlitebackend.service.userconfiguration.UserConfigurationService;
-import com.smartverse.churchlitebackend_gen.converters.UserConfigurationDTOConverter;
-import com.smartverse.churchlitebackend_gen.endpoints.*;
+import com.smartverse.churchlitebackend.converters.UserConfigurationDTOConverter;
+import com.smartverse.churchlitebackend.endpoints.*;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 

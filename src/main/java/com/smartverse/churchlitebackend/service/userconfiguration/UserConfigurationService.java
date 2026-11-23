@@ -1,23 +1,23 @@
 package com.smartverse.churchlitebackend.service.userconfiguration;
 
-import com.potatotech.authorization.exception.ServiceException;
-import com.potatotech.authorization.tenant.TenantContext;
+import com.smartverse.churchlitebackend.authorization.exception.ServiceException;
+import com.smartverse.churchlitebackend.authorization.tenant.TenantContext;
 import com.smartverse.churchlitebackend.config.database.TenantSchemaInterceptor;
 import com.smartverse.churchlitebackend.config.security.model.UserSupplierEntity;
 import com.smartverse.churchlitebackend.config.security.model.AccessProfile;
 import com.smartverse.churchlitebackend.config.security.repository.AuthenticationRepository;
-import com.smartverse.churchlitebackend_gen.enums.SubscriptionResource;
+import com.smartverse.churchlitebackend.enums.SubscriptionResource;
 import com.smartverse.churchlitebackend.service.subscription.SubscriptionService;
 
-import com.smartverse.churchlitebackend_gen.converters.UserConfigurationDTOConverter;
-import com.smartverse.churchlitebackend_gen.dtos.UserConfigurationDTO;
-import com.smartverse.churchlitebackend_gen.endpoints.CreateChurchUserInput;
-import com.smartverse.churchlitebackend_gen.entities.UserConfigurationEntity;
-import com.smartverse.churchlitebackend_gen.enums.Language;
-import com.smartverse.churchlitebackend_gen.enums.Theme;
+import com.smartverse.churchlitebackend.converters.UserConfigurationDTOConverter;
+import com.smartverse.churchlitebackend.dtos.UserConfigurationDTO;
+import com.smartverse.churchlitebackend.endpoints.CreateChurchUserInput;
+import com.smartverse.churchlitebackend.entities.UserConfigurationEntity;
+import com.smartverse.churchlitebackend.enums.Language;
+import com.smartverse.churchlitebackend.enums.Theme;
 import com.smartverse.churchlitebackend.repository.userconfiguration.UserConfigurationCustomRepository;
 import com.smartverse.churchlitebackend.repository.memberportal.MemberDashboardRepository;
-import com.smartverse.churchlitebackend_gen.entities.PersonMemberEntity;
+import com.smartverse.churchlitebackend.entities.PersonMemberEntity;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;

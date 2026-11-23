@@ -1,13 +1,13 @@
 package com.smartverse.churchlitebackend.controller.verifyurlchurch;
 
-import com.potatotech.authorization.stereotype.Anonymous;
+import com.smartverse.churchlitebackend.authorization.stereotype.Anonymous;
 import com.smartverse.churchlitebackend.config.migration.DBMigration;
 import com.smartverse.churchlitebackend.config.security.repository.AuthenticationRepository;
 import com.smartverse.churchlitebackend.config.security.service.AuthenticationService;
 import com.smartverse.churchlitebackend.service.memberportal.MemberPortalAccessService;
 import com.smartverse.churchlitebackend.messaging.social.TenantSyncPublisher;
 import com.smartverse.churchlitebackend.repository.userconfirmation.UserConfirmationCustomRepository;
-import com.smartverse.churchlitebackend_gen.endpoints.*;
+import com.smartverse.churchlitebackend.endpoints.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
