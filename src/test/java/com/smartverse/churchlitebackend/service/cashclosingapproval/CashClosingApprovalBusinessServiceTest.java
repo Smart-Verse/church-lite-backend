@@ -81,6 +81,7 @@ class CashClosingApprovalBusinessServiceTest {
         RequestUserContext.clear();
     }
 
+    // Garante que na política ANY uma única aprovação fecha o caixa (CLOSE_CASH) e notifica quem solicitou.
     @Test
     void saveShouldCloseCashAndNotifyRequesterWhenPolicyIsAny() {
         UUID txId = UUID.randomUUID();
@@ -145,6 +146,7 @@ class CashClosingApprovalBusinessServiceTest {
         );
     }
 
+    // Garante que na política ALL, se ainda faltar outro aprovador, o caixa permanece pendente sem fechar.
     @Test
     void saveShouldKeepCashPendingWhenPolicyIsAllAndAnotherApproverRemains() {
         UUID txId = UUID.randomUUID();
@@ -194,6 +196,7 @@ class CashClosingApprovalBusinessServiceTest {
         verify(notificationService, never()).create(any(), any(), any(), any(), any(), any(), any(), any());
     }
 
+    // Garante que apenas usuários configurados como aprovadores financeiros podem aprovar o fechamento.
     @Test
     void saveShouldThrowForbiddenWhenUserIsNotAnApprover() {
         UUID txId = UUID.randomUUID();

@@ -41,6 +41,7 @@ class CashBusinessServiceTest {
         ReflectionTestUtils.setField(service, "dtoConverter", dtoConverter);
     }
 
+    // Garante que ao salvar uma conta bancária o serviço verifica o recurso correspondente e persiste o cadastro.
     @Test
     void saveShouldCheckBankResourceAndPersist() {
         var dto = new CashDTO();
@@ -60,6 +61,7 @@ class CashBusinessServiceTest {
         verify(repository).save(entity);
     }
 
+    // Garante que na atualização sem troca de tipo (caixa/banco) não há nova verificação de limite de recurso.
     @Test
     void updateShouldSkipResourceCheckWhenTypeDidNotChange() {
         UUID id = UUID.randomUUID();

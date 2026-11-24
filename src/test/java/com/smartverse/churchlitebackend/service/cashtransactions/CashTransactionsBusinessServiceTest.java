@@ -87,6 +87,7 @@ class CashTransactionsBusinessServiceTest {
         RequestUserContext.clear();
     }
 
+    // Garante que, sem abertura ativa, o registro abre o caixa e atualiza o status para OPEN_CASH.
     @Test
     void saveShouldOpenCashWhenNoOpeningExists() {
         UUID cashId = UUID.randomUUID();
@@ -110,6 +111,7 @@ class CashTransactionsBusinessServiceTest {
         verify(cashRepository).save(cash);
     }
 
+    // Garante que, com política de aprovação desabilitada, o fechamento encerra o caixa diretamente (CLOSE_CASH).
     @Test
     void saveShouldCloseCashDirectlyWhenApprovalPolicyIsDisabled() {
         UUID cashId = UUID.randomUUID();
@@ -138,6 +140,7 @@ class CashTransactionsBusinessServiceTest {
         verify(cashRepository).save(cash);
     }
 
+    // Garante que, com política de aprovação ativa, o caixa fica em PENDING_APPROVAL e notifica os aprovadores.
     @Test
     void saveShouldSetPendingApprovalAndNotifyApproversWhenPolicyIsEnabled() {
         UUID cashId = UUID.randomUUID();
@@ -202,6 +205,7 @@ class CashTransactionsBusinessServiceTest {
         );
     }
 
+    // Garante que não é permitido abrir novamente um caixa que já possui uma abertura em andamento.
     @Test
     void saveShouldThrowWhenAlreadyOpenAndNoEndDate() {
         UUID cashId = UUID.randomUUID();

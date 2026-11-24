@@ -45,6 +45,9 @@ public class AccessProfileValidator {
             // Compatibilidade durante rollout, antes da migration de perfis estar disponível.
             return;
         }
+        if (profiles.isEmpty()) {
+            profiles = Set.of(STAFF_PROFILE);
+        }
 
         var requestedProfile = resolveRequestedProfile(request, profiles);
         if (!profiles.contains(requestedProfile)) {

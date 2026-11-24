@@ -51,6 +51,7 @@ class FinancialBusinessServiceTest {
         ReflectionTestUtils.setField(service, "dtoConverter", dtoConverter);
     }
 
+    // Garante que o lançamento financeiro é salvo e gera a transação quando a natureza do plano de contas é compatível.
     @Test
     void saveShouldPersistAndCreateTransactionWhenPlanAccountMatchesNature() {
         UUID planId = UUID.randomUUID();
@@ -79,6 +80,7 @@ class FinancialBusinessServiceTest {
         verify(transactionsService).save(entity);
     }
 
+    // Garante que lança erro e bloqueia a persistência quando a natureza do plano de contas diverge do tipo financeiro.
     @Test
     void saveShouldThrowWhenPlanAccountNatureMismatches() {
         UUID planId = UUID.randomUUID();
@@ -103,6 +105,7 @@ class FinancialBusinessServiceTest {
         verify(transactionsService, never()).save(any(FinancialEntity.class));
     }
 
+    // Garante que a atualização do lançamento financeiro propaga a alteração para a transação vinculada.
     @Test
     void updateShouldMergeAndUpdateTransaction() {
         UUID id = UUID.randomUUID();
@@ -123,6 +126,7 @@ class FinancialBusinessServiceTest {
         verify(transactionsService).update(entity);
     }
 
+    // Garante que a exclusão do lançamento financeiro também remove a movimentação associada.
     @Test
     void deleteShouldRemoveFinancialAndDelegateTransactionDeletion() {
         UUID id = UUID.randomUUID();

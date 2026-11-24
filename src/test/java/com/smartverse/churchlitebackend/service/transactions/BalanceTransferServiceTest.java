@@ -2,7 +2,6 @@ package com.smartverse.churchlitebackend.service.transactions;
 
 import com.smartverse.churchlitebackend.authorization.exception.ServiceException;
 import com.smartverse.churchlitebackend.entities.CashEntity;
-import com.smartverse.churchlitebackend.entities.CashTransactionsEntity;
 import com.smartverse.churchlitebackend.entities.TransactionsEntity;
 import com.smartverse.churchlitebackend.enums.TransactionOperation;
 import com.smartverse.churchlitebackend.enums.TypeCash;
@@ -47,16 +46,17 @@ class BalanceTransferServiceTest {
         service = new BalanceTransferService(cashRepository, sessionRepository, transactionRepository);
     }
 
+    // Garante que a transferência entre contas com saldo suficiente gera um par saída/entrada com o mesmo transferId.
     @Test
     void createShouldSavePairedTransferTransactionsWhenBalanceIsSufficient() {
         UUID sourceId = UUID.randomUUID();
         UUID destinationId = UUID.randomUUID();
 
-        var source = bank(sourceId, "Conta Principal", 100.0);
-        var destination = bank(destinationId, "Conta Reserva", 0.0);
+        var source = bank(sourceId, "Conta Principal");
+        var destination = bank(destinationId, "Conta Reserva");
 
         when(cashRepository.findAllForUpdate(List.of(sourceId, destinationId))).thenReturn(List.of(source, destination));
-        when(transactionRepository.sumBankBalance(sourceId)).thenReturn(400.0);
+        when(transactionRepository.findByCashId(sourceId)).thenReturn(List.of(movement(TransactionOperation.REVENUE, 500.0)));
 
         var result = service.create(sourceId, destinationId, 300.0, LocalDate.now(), "Transferência", "Obs");
 
@@ -72,16 +72,17 @@ class BalanceTransferServiceTest {
         assertNotNull(result.get("transferId"));
     }
 
+    // Garante que a transferência é bloqueada quando a conta de origem não possui saldo suficiente.
     @Test
     void createShouldThrowWhenSourceBalanceIsInsufficient() {
         UUID sourceId = UUID.randomUUID();
         UUID destinationId = UUID.randomUUID();
 
-        var source = bank(sourceId, "Conta Principal", 50.0);
-        var destination = bank(destinationId, "Conta Reserva", 0.0);
+        var source = bank(sourceId, "Conta Principal");
+        var destination = bank(destinationId, "Conta Reserva");
 
         when(cashRepository.findAllForUpdate(List.of(sourceId, destinationId))).thenReturn(List.of(source, destination));
-        when(transactionRepository.sumBankBalance(sourceId)).thenReturn(20.0);
+        when(transactionRepository.findByCashId(sourceId)).thenReturn(List.of(movement(TransactionOperation.REVENUE, 70.0)));
 
         var exception = assertThrows(ServiceException.class, () ->
                 service.create(sourceId, destinationId, 100.0, LocalDate.now(), "Transferência", null));
@@ -91,6 +92,7 @@ class BalanceTransferServiceTest {
         verify(transactionRepository, never()).saveAll(anyList());
     }
 
+    // Garante que não é possível transferir valores de uma conta para ela mesma.
     @Test
     void createShouldRejectSameSourceAndDestination() {
         UUID id = UUID.randomUUID();
@@ -102,6 +104,7 @@ class BalanceTransferServiceTest {
         assertEquals("Origem e destino devem ser diferentes", exception.getMessage());
     }
 
+    // Garante que a transferência envolvendo caixa físico exige que o caixa esteja aberto.
     @Test
     void createShouldRejectClosedCashAccount() {
         UUID sourceId = UUID.randomUUID();
@@ -112,7 +115,7 @@ class BalanceTransferServiceTest {
         source.setDescription("Caixa Central");
         source.setTypeCash(TypeCash.CASH);
 
-        var destination = bank(destinationId, "Conta Banco", 0.0);
+        var destination = bank(destinationId, "Conta Banco");
 
         when(cashRepository.findAllForUpdate(List.of(sourceId, destinationId))).thenReturn(List.of(source, destination));
         when(sessionRepository.findOpenForUpdate(sourceId)).thenReturn(Optional.empty());
@@ -124,11 +127,12 @@ class BalanceTransferServiceTest {
         assertEquals("O caixa Caixa Central precisa estar aberto", exception.getMessage());
     }
 
+    // Garante que o estorno da transferência remove o par de movimentações quando o destino tem saldo para devolver.
     @Test
     void reverseShouldDeletePairWhenDestinationHasSufficientBalance() {
         UUID transferId = UUID.randomUUID();
-        var source = bank(UUID.randomUUID(), "Origem", 0.0);
-        var destination = bank(UUID.randomUUID(), "Destino", 200.0);
+        var source = bank(UUID.randomUUID(), "Origem");
+        var destination = bank(UUID.randomUUID(), "Destino");
 
         var out = new TransactionsEntity();
         out.setTransferId(transferId);
@@ -145,18 +149,20 @@ class BalanceTransferServiceTest {
         when(transactionRepository.findByTransferIdOrderByTransactionOperation(transferId)).thenReturn(List.of(out, in));
         when(cashRepository.findAllForUpdate(List.of(source.getId(), destination.getId())))
                 .thenReturn(List.of(source, destination));
-        when(transactionRepository.sumBankBalance(destination.getId())).thenReturn(0.0);
+        when(transactionRepository.findByCashId(destination.getId()))
+                .thenReturn(List.of(movement(TransactionOperation.TRANSFER_IN, 200.0)));
 
         service.reverse(transferId);
 
         verify(transactionRepository).deleteAll(List.of(out, in));
     }
 
+    // Garante que o estorno é bloqueado se a conta de destino não tiver saldo suficiente para cobrir a devolução.
     @Test
     void reverseShouldThrowWhenDestinationBalanceIsInsufficient() {
         UUID transferId = UUID.randomUUID();
-        var source = bank(UUID.randomUUID(), "Origem", 0.0);
-        var destination = bank(UUID.randomUUID(), "Destino", 0.0);
+        var source = bank(UUID.randomUUID(), "Origem");
+        var destination = bank(UUID.randomUUID(), "Destino");
 
         var out = new TransactionsEntity();
         out.setTransferId(transferId);
@@ -173,7 +179,8 @@ class BalanceTransferServiceTest {
         when(transactionRepository.findByTransferIdOrderByTransactionOperation(transferId)).thenReturn(List.of(out, in));
         when(cashRepository.findAllForUpdate(List.of(source.getId(), destination.getId())))
                 .thenReturn(List.of(source, destination));
-        when(transactionRepository.sumBankBalance(destination.getId())).thenReturn(50.0);
+        when(transactionRepository.findByCashId(destination.getId()))
+                .thenReturn(List.of(movement(TransactionOperation.TRANSFER_IN, 50.0)));
 
         var exception = assertThrows(ServiceException.class, () -> service.reverse(transferId));
 
@@ -182,12 +189,18 @@ class BalanceTransferServiceTest {
         verify(transactionRepository, never()).deleteAll(anyList());
     }
 
-    private CashEntity bank(UUID id, String description, double initialValue) {
+    private CashEntity bank(UUID id, String description) {
         var cash = new CashEntity();
         cash.setId(id);
         cash.setDescription(description);
         cash.setTypeCash(TypeCash.BANK);
-        cash.setInitialValue(initialValue);
         return cash;
+    }
+
+    private TransactionsEntity movement(TransactionOperation operation, double value) {
+        var tx = new TransactionsEntity();
+        tx.setTransactionOperation(operation);
+        tx.setValue(value);
+        return tx;
     }
 }

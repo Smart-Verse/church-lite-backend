@@ -88,6 +88,7 @@ public class UserConfigurationService {
             accessUser.setTenant(churchTenant);
             accessUser.setActive(true);
             accessUser.setUserConfirm(true);
+            accessUser.setAccessProfiles(new java.util.HashSet<>(java.util.Set.of(AccessProfile.STAFF)));
             accessUser = authenticationRepository.saveAndFlush(accessUser);
 
             switchSchema(churchTenant);

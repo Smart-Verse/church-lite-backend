@@ -1,10 +1,10 @@
-package com.smartverse.basebackend;
+package com.smartverse.churchlitebackend;
 
 import com.smartverse.StarterApplication;
 import org.junit.jupiter.api.Test;
 
 
-class BaseBackendApplicationTests {
+class StarterApplicationTests {
 
 	@Test
 	void contextLoads() {

@@ -67,7 +67,9 @@ public class AuthenticationService {
                         user.getId(),
                         user.getName(),
                         user.getTenant(),
-                        user.getAccessProfiles(),
+                        user.getAccessProfiles() == null || user.getAccessProfiles().isEmpty()
+                                ? java.util.Set.of(AccessProfile.STAFF)
+                                : user.getAccessProfiles(),
                         authenticate.generateToken(setUserSupplier(user))))
                 .toList();
 

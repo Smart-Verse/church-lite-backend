@@ -6,9 +6,10 @@ COPY .mvn/ .mvn
 COPY mvnw pom.xml ./
 RUN chmod +x mvnw && ./mvnw dependency:go-offline -B
 
+COPY .gonthera ./.gonthera
 COPY src ./src
 RUN ./mvnw clean package -DskipTests -B && \
-    cp target/church-lite-backend-*.jar /app/app.jar
+    cp target/*.jar /app/app.jar
 
 # Stage 2: Runtime leve com JRE 25
 FROM eclipse-temurin:25-jre

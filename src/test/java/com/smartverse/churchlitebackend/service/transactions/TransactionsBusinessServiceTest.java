@@ -48,6 +48,7 @@ class TransactionsBusinessServiceTest {
         ReflectionTestUtils.setField(service, "cashTransactionsCustomRepository", cashTransactionsCustomRepository);
     }
 
+    // Garante que uma receita quitada em caixa aberto cria uma transação de receita vinculada à abertura atual.
     @Test
     void saveShouldCreateRevenueTransactionWhenCashIsOpenAndPaid() {
         UUID cashId = UUID.randomUUID();
@@ -67,8 +68,8 @@ class TransactionsBusinessServiceTest {
         financial.setValue(250.0);
         financial.setTypeFinancial(TypeFinancial.REVENUE);
 
-        var opening = new CashTransactionsEntity();
-        when(cashTransactionsCustomRepository.getLastOpeningId(cashId)).thenReturn(opening);
+        UUID openingId = UUID.randomUUID();
+        when(cashTransactionsCustomRepository.getLastOpeningId(cashId)).thenReturn(openingId);
 
         service.save(financial);
 
@@ -78,9 +79,10 @@ class TransactionsBusinessServiceTest {
         assertEquals(TransactionOperation.REVENUE, saved.getTransactionOperation());
         assertEquals("LANÇAMENTO: DÍZIMOS", saved.getDescription());
         assertEquals(250.0, saved.getValue());
-        assertEquals(opening, saved.getCashTransaction());
+        assertEquals(openingId, saved.getCashTransaction());
     }
 
+    // Garante que lançamentos ainda não pagos (sem data de pagamento/recebimento) não geram movimentação no caixa.
     @Test
     void saveShouldSkipWhenPaymentReceiptDateIsNull() {
         var financial = new FinancialEntity();
@@ -91,6 +93,7 @@ class TransactionsBusinessServiceTest {
         verify(transactionsRepository, never()).save(any());
     }
 
+    // Garante que não é permitido movimentar um lançamento em um caixa físico que esteja fechado.
     @Test
     void saveShouldThrowWhenCashIsClosed() {
         var cash = new CashEntity();
@@ -109,6 +112,7 @@ class TransactionsBusinessServiceTest {
         verify(transactionsRepository, never()).save(any());
     }
 
+    // Garante que, ao limpar a data de pagamento na edição, a transação anterior é removida.
     @Test
     void updateShouldDeleteExistingTransactionWhenPaymentReceiptDateBecomesNull() {
         var financial = new FinancialEntity();
@@ -123,6 +127,7 @@ class TransactionsBusinessServiceTest {
         verify(transactionsRepository, never()).save(any());
     }
 
+    // Garante que a exclusão direta de movimentações por ID é bloqueada para manter a integridade com o financeiro.
     @Test
     void deleteByIdShouldRejectDirectDeletion() {
         var exception = assertThrows(ServiceException.class, () -> service.delete(UUID.randomUUID()));
