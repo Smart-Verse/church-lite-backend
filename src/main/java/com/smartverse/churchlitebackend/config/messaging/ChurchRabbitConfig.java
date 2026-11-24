@@ -21,8 +21,6 @@ import java.nio.charset.StandardCharsets;
 @RabbitExchange("smart.church.events")
 public class ChurchRabbitConfig extends RabbitConfig {
     private static final String EXCHANGE = "smart.church.events";
-    private static final String PAYMENT_EXCHANGE = "smart.payment.events";
-    private static final String ROUTING_KEY = "payment.confirmed.CHURCH_LITE";
     private static final String MEMBER_IMAGE_ROUTING_KEY = "social.profile.image.updated";
 
     @Override
@@ -45,26 +43,6 @@ public class ChurchRabbitConfig extends RabbitConfig {
                 return new String(message.getBody(), StandardCharsets.UTF_8);
             }
         };
-    }
-
-    @Bean
-    public Queue paymentConfirmedQueue(
-            @Value("${smart-payment.confirmed-queue}") String queueName) {
-        return new Queue(queueName, true);
-    }
-
-    @Bean
-    public TopicExchange paymentTopicExchange() {
-        return new TopicExchange(PAYMENT_EXCHANGE);
-    }
-
-    @Bean
-    public Binding paymentConfirmedBinding(
-            Queue paymentConfirmedQueue,
-            @Qualifier("paymentTopicExchange") TopicExchange paymentTopicExchange) {
-        return BindingBuilder.bind(paymentConfirmedQueue)
-                .to(paymentTopicExchange)
-                .with(ROUTING_KEY);
     }
 
     @Bean

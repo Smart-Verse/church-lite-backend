@@ -71,56 +71,46 @@ public class SubscriptionService {
         });
     }
 
-    @Transactional
     public CurrentSubscriptionDTO getCurrentSubscription(long storageBytes) {
-        var snapshot = getCurrentSnapshot();
         var output = new CurrentSubscriptionDTO();
-        output.planCode = snapshot.planCode();
-        output.planName = snapshot.planName();
-        output.priceMonthly = snapshot.priceMonthly();
-        output.status = snapshot.status();
-        output.currentPeriodEndsAt = snapshot.currentPeriodEndsAt();
-        output.gracePeriodEndsAt = snapshot.gracePeriodEndsAt();
-        output.resources = snapshot.limits().entrySet().stream()
-                .map(entry -> toUsage(entry.getKey(), entry.getValue(), usage(entry.getKey(), storageBytes)))
+        output.planCode = "PREMIUM";
+        output.planName = "Local TCC";
+        output.priceMonthly = 0.0;
+        output.status = "ACTIVE";
+        output.resources = java.util.Arrays.stream(SubscriptionResource.values())
+                .map(resource -> {
+                    var item = new SubscriptionResourceUsageDTO();
+                    item.resource = resource.name();
+                    item.limitValue = null;
+                    item.used = 0L;
+                    item.remaining = null;
+                    item.percentage = 0;
+                    item.warningPercentage = 100;
+                    item.allowed = true;
+                    return item;
+                })
                 .toList();
-        output.features = snapshot.features().entrySet().stream()
-                .map(entry -> {
+        output.features = java.util.Arrays.stream(SubscriptionFeature.values())
+                .map(featureEnum -> {
                     var feature = new SubscriptionFeatureAvailabilityDTO();
-                    feature.feature = entry.getKey().name();
-                    feature.enabled = entry.getValue();
+                    feature.feature = featureEnum.name();
+                    feature.enabled = true;
                     return feature;
                 })
                 .toList();
         return output;
     }
 
-    @Transactional(propagation = Propagation.REQUIRES_NEW)
     public void requireAvailable(SubscriptionResource resource) {
-        requireAvailable(resource, usage(resource, 0));
+        // Sem bloqueio de assinatura no modo local/TCC
     }
 
-    @Transactional(propagation = Propagation.REQUIRES_NEW)
     public void requireAvailable(SubscriptionResource resource, long currentUsage) {
-        var snapshot = getCurrentSnapshot();
-        requireOperational(snapshot);
-        var limit = snapshot.limits().get(resource);
-        if (limit != null && limit.value() != null && currentUsage >= limit.value()) {
-            throw new ServiceException(
-                    HttpStatus.UNPROCESSABLE_ENTITY,
-                    "subscription_limit_reached_" + resource.name().toLowerCase(Locale.ROOT));
-        }
+        // Sem bloqueio de assinatura no modo local/TCC
     }
 
-    @Transactional(propagation = Propagation.REQUIRES_NEW)
     public void requireFeature(SubscriptionFeature feature) {
-        var snapshot = getCurrentSnapshot();
-        requireOperational(snapshot);
-        if (!snapshot.features().getOrDefault(feature, false)) {
-            throw new ServiceException(
-                    HttpStatus.FORBIDDEN,
-                    "subscription_feature_unavailable_" + feature.name().toLowerCase(Locale.ROOT));
-        }
+        // Sem bloqueio de assinatura no modo local/TCC
     }
 
     private SubscriptionSnapshot loadSnapshot(String tenant) {

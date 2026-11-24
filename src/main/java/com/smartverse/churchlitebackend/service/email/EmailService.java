@@ -2,12 +2,16 @@ package com.smartverse.churchlitebackend.service.email;
 
 import com.smartverse.churchlitebackend.authorization.exception.ServiceException;
 import com.smartverse.churchlitebackend.common.FileCommon;
+import jakarta.mail.internet.MimeMessage;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.MediaType;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClient;
 
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.Map;
 
@@ -15,11 +19,19 @@ import java.util.Map;
 public class EmailService {
 
     private final RestClient resend;
+    private final JavaMailSender mailSender;
     private final String from;
+    private final String mailProvider;
+    private final String resendKey;
 
     public EmailService(RestClient.Builder builder,
+                        JavaMailSender mailSender,
+                        @Value("${app.mail.provider:mailpit}") String mailProvider,
                         @Value("${resend.api-key:${RESEND_KEY:}}") String resendKey,
                         @Value("${resend.from:${RESEND_FROM:Church Lite <no-reply@smartverse.com.br>}}") String from) {
+        this.mailSender = mailSender;
+        this.mailProvider = mailProvider;
+        this.resendKey = resendKey;
         this.resend = builder
                 .baseUrl("https://api.resend.com")
                 .defaultHeader("Authorization", "Bearer " + resendKey)
@@ -28,6 +40,28 @@ public class EmailService {
     }
 
     public void sendEmail(String to, String subject, String model, String idempotencyKey) {
+        if ("mailpit".equalsIgnoreCase(mailProvider) || resendKey == null || resendKey.isBlank()) {
+            sendViaMailpit(to, subject, model);
+            return;
+        }
+        sendViaResend(to, subject, model, idempotencyKey);
+    }
+
+    private void sendViaMailpit(String to, String subject, String html) {
+        try {
+            MimeMessage message = mailSender.createMimeMessage();
+            MimeMessageHelper helper = new MimeMessageHelper(message, false, StandardCharsets.UTF_8.name());
+            helper.setFrom(from);
+            helper.setTo(to);
+            helper.setSubject(subject);
+            helper.setText(html, true);
+            mailSender.send(message);
+        } catch (Exception exception) {
+            throw new ServiceException(HttpStatus.BAD_GATEWAY, "email_delivery_failed");
+        }
+    }
+
+    private void sendViaResend(String to, String subject, String model, String idempotencyKey) {
         try {
             var response = resend.post()
                     .uri("/emails")
